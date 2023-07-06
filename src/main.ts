@@ -1,3 +1,4 @@
-import { setupCounter } from 'src/counter.ts';
+import { Counter } from 'src/counter.ts';
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
+const counter = new Counter();
+counter.setupPage();
