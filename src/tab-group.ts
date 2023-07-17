@@ -1,6 +1,4 @@
-import { Counter } from 'src/counter.ts';
-
-class TopPage {
+export class TabGroup {
   constructor(
     private switches = document.querySelectorAll<HTMLDivElement>('.tab-switch')!,
     private tabs = document.querySelectorAll<HTMLDivElement>('.tab-subgroup')!,
@@ -34,10 +32,3 @@ class TopPage {
     this.tabs.forEach((elm: HTMLDivElement) => elm.classList.remove('active'));
   }
 }
-
-window.addEventListener('load', () => {
-  const counter = new Counter();
-  counter.setupPage();
-  const topPage = new TopPage();
-  topPage.setupPage();
-});

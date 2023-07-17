@@ -1,3 +1,4 @@
+/* リセット */
 *,
 *::before,
 *::after {
@@ -6,10 +7,10 @@
   margin: 0;
 }
 
+/* タブ切り替え */
 .tab-switches {
   display: flex;
 }
-
 .tab-switch {
   border: solid 1px grey;
   text-align: center;
@@ -17,19 +18,21 @@
   padding: 4px;
   cursor: pointer;
 }
-
 .tab-switch.active {
   background-color: aqua;
   color: white;
 }
-
 .tab-group {
   padding: 10px;
 }
 .tab-subgroup {
   display: none;
 }
-
 .tab-subgroup.active {
   display: block;
+}
+
+/* ユーザー一覧テーブル */
+.user-list-tempalate-row {
+  display: none;
 }

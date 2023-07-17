@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="public/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla-ts-app</title>
   </head>
@@ -11,16 +10,16 @@
     <div id="app">
       <!--タブ切り替えスイッチ -->
       <div class="tab-switches">
-        <div class="tab-switch active" name="tab-counter">Counter</div>
-        <div class="tab-switch" name="tab-table">Table</div>
+        <div class="tab-switch active" name="tab-table">テーブル構造</div>
+        <div class="tab-switch" name="tab-tree">ツリー構造</div>
       </div>
       <hr />
       <!--タブ -->
       <div class="tab-group">
-        <div id="counter" class="tab-subgroup active" name="tab-counter">カウンター</div>
-        <div id="table" class="tab-subgroup" name="tab-table">テーブル</div>
+        <div id="table-structure" class="tab-subgroup active" name="tab-table"></div>
+        <div id="tree-structure" class="tab-subgroup" name="tab-tree"></div>
       </div>
     </div>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/index.ts"></script>
   </body>
 </html>
