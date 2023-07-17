@@ -4,8 +4,8 @@ export class Counter {
   private async embedComponent() {
     const response = await fetch('/page/counter.html');
     const data = await response.text();
-    const targetDom = document.querySelector<HTMLElement>('#counter')!;
-    targetDom.innerHTML = data;
+    const appDom = document.querySelector<HTMLElement>('#app')!;
+    appDom.innerHTML = data;
   }
 
   public async setupPage() {
@@ -14,7 +14,7 @@ export class Counter {
   }
 
   private setupEvent() {
-    const countUpButton = document.querySelector<HTMLButtonElement>('#countup')!;
+    const countUpButton = document.querySelector<HTMLButtonElement>('#counter')!;
     countUpButton.addEventListener('click', () => {
       this.counter++;
       countUpButton.innerHTML = `count is ${this.counter}`;

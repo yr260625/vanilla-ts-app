@@ -8,7 +8,19 @@
     <title>Vanilla-ts-app</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!--タブ切り替えスイッチ -->
+      <div class="tab-switches">
+        <div class="tab-switch active" name="tab-counter">Counter</div>
+        <div class="tab-switch" name="tab-table">Table</div>
+      </div>
+      <hr />
+      <!--タブ -->
+      <div class="tab-group">
+        <div id="counter" class="tab-subgroup active" name="tab-counter">カウンター</div>
+        <div id="table" class="tab-subgroup" name="tab-table">テーブル</div>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
