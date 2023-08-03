@@ -1,4 +1,7 @@
-/* リセット */
+/*********************************************************************
+* リセットスタイル
+*********************************************************************/
+
 *,
 *::before,
 *::after {
@@ -6,33 +9,99 @@
   padding: 0;
   margin: 0;
 }
+li {
+  list-style: none;
+}
 
-/* タブ切り替え */
-.tab-switches {
+/*********************************************************************
+* 全体スタイルスタイル
+*********************************************************************/
+/* ボディ */
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
+    'BIZ UDPGothic', Meiryo, sans-serif;
+  color: #2d3748;
+}
+
+/* メイン */
+.main {
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.hidden {
+  display: none;
+}
+
+/*********************************************************************
+* タブ
+*********************************************************************/
+/* タブ切り替えボタン */
+.menu__list {
   display: flex;
 }
-.tab-switch {
-  border: solid 1px grey;
+.menu__item {
   text-align: center;
   width: 150px;
   padding: 4px;
   cursor: pointer;
+  color: rgb(183, 183, 183);
+  font-weight: lighter;
 }
-.tab-switch.active {
-  background-color: aqua;
-  color: white;
+.menu__item--active {
+  background-color: rgb(255, 255, 255);
+  color: #5e83e8;
+  font-weight: bold;
+  border-bottom: solid 0.1rem #5e83e8;
 }
-.tab-group {
-  padding: 10px;
+
+/* タブコンテンツ */
+.contents {
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 1024px;
 }
-.tab-subgroup {
+.contents__item {
   display: none;
 }
-.tab-subgroup.active {
+.contents__item--active {
   display: block;
 }
 
+/*********************************************************************
+* ユーザー一覧
+*********************************************************************/
+.user-list__title {
+  padding: 15px 0;
+}
+
 /* ユーザー一覧テーブル */
-.user-list-tempalate-row {
-  display: none;
+.user-list__table {
+  padding: 10px;
+  border-collapse: collapse;
+}
+.user-list__thead {
+  background-color: #a3ddfc;
+}
+.user-list__th {
+  padding: 0.5rem;
+  text-align: left;
+}
+.user-list__td {
+  padding: 0.5rem;
+  text-align: left;
+}
+.user-list__link {
+  color: #0074de;
+  cursor: pointer;
+}
+.user-list__link:hover {
+  opacity: 0.8;
+}
+
+.user-list__tr {
+  border-bottom: 1px solid #dedede;
+}
+.user-list__tr:last-child {
+  border-bottom: none;
 }

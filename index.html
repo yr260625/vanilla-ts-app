@@ -7,46 +7,53 @@
     <title>Vanilla-ts-app</title>
   </head>
   <body>
-    <div id="app">
-      <!--タブ切り替えスイッチ -->
-      <div class="tab-switches">
-        <div class="tab-switch active" name="tab-table">テーブル構造</div>
-        <div class="tab-switch" name="tab-tree">ツリー構造</div>
-      </div>
-      <hr />
-      <!--タブ -->
-      <div class="tab-group">
-        <div id="table-structure" class="tab-subgroup active" name="tab-table">
-          <div>
-            <h2>テーブル構造作成例</h2>
-            <div class="table-container">
-              <table class="user-list">
-                <thead class="user-list-header">
-                  <td>ID</td>
-                  <td>Name</td>
-                  <td>E-mail</td>
-                  <td>Phone</td>
-                  <td>Website</td>
+    <main class="main">
+      <div class="main__container">
+        <!--タブ切り替えスイッチ -->
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item menu__item--active" name="user-list">ユーザー</li>
+            <li class="menu__item" name="file-list">ファイル</li>
+          </ul>
+        </nav>
+        <!--タブ -->
+        <div class="contents">
+          <div class="contents__item contents__item--active" name="user-list">
+            <div class="user-list">
+              <h2 class="user-list__title">Users</h2>
+              <table class="user-list__table hidden">
+                <thead class="user-list__thead">
+                  <th class="user-list__th" name="id">ID</th>
+                  <th class="user-list__th" name="name">Name</th>
+                  <th class="user-list__th" name="email">E-mail</th>
+                  <th class="user-list__th" name="phone">Phone</th>
+                  <th class="user-list__th" name="website">Website</th>
+                  <th class="user-list__th" name="detail">Detail</th>
                 </thead>
-                <tbody class="user-list-body"></tbody>
+                <tbody class="user-list__tbody"></tbody>
               </table>
               <div>
                 <table>
-                  <tr class="user-list-tempalate-row">
-                    <td name="id"></td>
-                    <td name="name"></td>
-                    <td name="email"></td>
-                    <td name="phone"></td>
-                    <td name="website"></td>
+                  <tr class="user-list__tr hidden">
+                    <td class="user-list__td" name="id"></td>
+                    <td class="user-list__td" name="name"></td>
+                    <td class="user-list__td" name="email"></td>
+                    <td class="user-list__td" name="phone"></td>
+                    <td class="user-list__td">
+                      <div class="user-list__link" name="website"></div>
+                    </td>
+                    <td class="user-list__td" name="detail">
+                      <button class="user-detail">detail</button>
+                    </td>
                   </tr>
                 </table>
               </div>
             </div>
           </div>
+          <div class="contents__item" name="file-list"></div>
         </div>
-        <div id="tree-structure" class="tab-subgroup" name="tab-tree"></div>
       </div>
-    </div>
+    </main>
     <script type="module" src="/src/index.ts"></script>
   </body>
 </html>
