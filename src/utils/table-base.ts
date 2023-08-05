@@ -1,30 +1,57 @@
 export class BaseTable {
-  constructor() {}
+  constructor(
+    readonly tableClassName: string,
+    readonly tableBodyName: string,
+    readonly tableRowClassName: string,
+  ) {}
 
   /**
-   * ユーザーテーブル初期化
+   * テーブル初期化
    */
-  public async createUserTable() {}
+  public init() {
+    document.querySelector(`.${this.tableBodyName}`)!.innerHTML = '';
+  }
 
   /**
-   * 第一引数のクラス名のテーブルテンプレート行をcloneする
+   * テーブル生成
+   */
+  public create(list: Array<{ [key: string]: string }>) {
+    list.forEach((row: { [key: string]: string }) => {
+      const templateRow = this.createTemplateRow();
+      const concreteRow = this.createConcreteRow(templateRow, row);
+      const appendTargetDom = document.querySelector<HTMLElement>(`.${this.tableBodyName}`);
+      concreteRow!.classList.remove('hidden');
+      appendTargetDom!.appendChild(concreteRow!);
+    });
+  }
+
+  /**
+   * テーブル表示
+   */
+  public show() {
+    const targetTableDom = document.querySelector<HTMLElement>(`.${this.tableClassName}`);
+    targetTableDom!.classList.remove('hidden');
+  }
+
+  /**
+   * テーブルテンプレート行生成
    * @param rowName テーブルテンプレート行に割り当てたクラス名
    * @returns
    */
-  public createTemplateRow(rowClassName: string): Node {
-    const templateRow = document.querySelector<HTMLElement>(`.${rowClassName}`);
+  private createTemplateRow(): Node {
+    const templateRow = document.querySelector<HTMLElement>(`.${this.tableRowClassName}`);
     if (!templateRow) {
-      throw Error(`.${rowClassName} doesn't exists in page.`);
+      throw Error(`.${this.tableRowClassName} doesn't exists in page.`);
     }
     return templateRow.cloneNode(true);
   }
 
   /**
-   *  第一引数のテーブルテンプレート行(DOM)に、列名に対応する値を挿入して返却する
+   *  テーブル行生成
    * @param templateRow テーブルテンプレート行(DOM)
    * @param valueObject 列名と値の辞書オブジェクト
    */
-  public createConcreteRow(templateRow: Node, valueObject: { [key: string]: string }) {
+  private createConcreteRow(templateRow: Node, valueObject: { [key: string]: string }) {
     const clonedRow = templateRow.cloneNode(true) as HTMLElement;
     for (const [key, value] of Object.entries(valueObject)) {
       const tdCol = clonedRow.querySelector<HTMLElement>(`[name=${key}]`);
