@@ -25,7 +25,7 @@ type User = {
   };
 };
 
-export class UserTable {
+export class UserList {
   // ユーザー一覧
   private users: User[] = [];
   private userTable = new BaseTable('user-list__table', 'user-list__tbody', 'user-list__tr');
@@ -70,6 +70,7 @@ export class UserTable {
       email: user.email,
       phone: user.phone,
       website: user.website,
+      city: user.address.city,
     };
   }
 }

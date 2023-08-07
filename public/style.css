@@ -105,3 +105,25 @@ body {
 .user-list__tr:last-child {
   border-bottom: none;
 }
+
+/*********************************************************************
+* ユーザー一覧
+*********************************************************************/
+.file-list__title {
+  padding: 15px 0;
+}
+
+.file-list__node {
+  cursor: pointer;
+}
+.file-list__nodename {
+  display: inline-block;
+}
+
+.file-list__node--opened {
+  display: block;
+}
+
+.file-list__node--closed {
+  display: none;
+}

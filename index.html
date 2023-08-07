@@ -12,13 +12,13 @@
         <!--タブ切り替えスイッチ -->
         <nav class="menu">
           <ul class="menu__list">
-            <li class="menu__item menu__item--active" name="user-list">Users</li>
-            <li class="menu__item" name="file-list">Files</li>
+            <li class="menu__item" name="user-list">Users</li>
+            <li class="menu__item menu__item--active" name="file-list">Files</li>
           </ul>
         </nav>
         <!--タブ -->
         <div class="contents">
-          <div class="contents__item contents__item--active" name="user-list">
+          <div class="contents__item" name="user-list">
             <div class="user-list">
               <h2 class="user-list__title">Users</h2>
               <table class="user-list__table hidden">
@@ -27,6 +27,7 @@
                   <th class="user-list__th" name="name">Name</th>
                   <th class="user-list__th" name="email">E-mail</th>
                   <th class="user-list__th" name="phone">Phone</th>
+                  <th class="user-list__th" name="city">City</th>
                   <th class="user-list__th" name="website">Website</th>
                   <th class="user-list__th" name="detail">Detail</th>
                 </thead>
@@ -39,6 +40,7 @@
                     <td class="user-list__td" name="name"></td>
                     <td class="user-list__td" name="email"></td>
                     <td class="user-list__td" name="phone"></td>
+                    <td class="user-list__td" name="city"></td>
                     <td class="user-list__td">
                       <div class="user-list__link" name="website"></div>
                     </td>
@@ -50,7 +52,12 @@
               </div>
             </div>
           </div>
-          <div class="contents__item" name="file-list"></div>
+          <div class="contents__item contents__item--active" name="file-list">
+            <div class="file-list">
+              <h2 class="file-list__title">Files</h2>
+              <div class="file-list__root"></div>
+            </d>
+          </div>
         </div>
       </div>
     </main>
