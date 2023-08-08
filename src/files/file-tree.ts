@@ -21,6 +21,9 @@ export class FileTree {
     this.setEvent();
   }
 
+  /**
+   * ファイルツリー生成
+   */
   private makeTree() {
     const root = document.querySelector('.file-list__root');
     for (let row of this.files) {
@@ -38,16 +41,38 @@ export class FileTree {
     }
   }
 
+  /**
+   * アイコン、ノード名をラップするspan要素を生成
+   * @param row ファイルオブジェクト
+   * @returns アイコン、ノード名を含むdiv要素
+   */
   private createNodeName(row: File) {
-    const nodeName = document.createElement('span')!;
+    // アイコン
+    const icon = document.createElement('img');
+    icon.setAttribute('src', `${row.type == 0 ? 'public/folder.svg' : 'public/file.svg'}`);
+    icon.classList.add('file-list__nodeicon');
+
+    // ノード名
+    const nodeName = document.createElement('span');
     nodeName.textContent = row.name;
-    nodeName.classList.add('file-list__nodename');
-    const indentNum = row.path.split('/').length - 2;
-    nodeName.style.setProperty('text-indent', `${indentNum}rem`);
-    return nodeName;
+
+    // アイコン、ノード名をspanでラップ
+    const wrapper = document.createElement('span');
+    wrapper.appendChild(icon);
+    wrapper.appendChild(nodeName);
+    wrapper.classList.add('file-list__nodeline');
+    wrapper.style.setProperty('margin-left', `${row.path.split('/').length - 2}rem`);
+
+    return wrapper;
   }
 
-  private createNode(nodeName: HTMLSpanElement, row: File) {
+  /**
+   * ノード生成
+   * @param nodeName ノード名を含むspan要素
+   * @param row ファイルオブジェクト
+   * @returns ファイルノードオブジェクト
+   */
+  private createNode(nodeName: HTMLElement, row: File) {
     const node = document.createElement('div')!;
     node.appendChild(nodeName);
     node.setAttribute('path', row.path);
@@ -59,26 +84,36 @@ export class FileTree {
     return node;
   }
 
+  /**
+   * 引数のファイルオブジェクトの親要素を取得
+   * @param row ファイルオブジェクト
+   * @returns
+   */
   private getParentDir(row: File) {
     const reg = new RegExp(`/${row.name}$`);
     const parentDir = row.path.replace(reg, '');
     return document.querySelector(`[path='${parentDir}']`);
   }
 
+  /**
+   * 各ノードにイベント設定
+   */
   private setEvent() {
+    // ディレクトリ
     document.querySelectorAll<HTMLElement>(".file-list__node[type='0']").forEach((elm) => {
       elm.addEventListener('click', (e: Event) => this.toggleDir(e));
     });
+
+    // ファイル
     document.querySelectorAll<HTMLElement>(".file-list__node[type='1']").forEach((elm) => {
-      elm.addEventListener('click', (e: Event) => {
-        const target = e.currentTarget as HTMLElement;
-        const fileName = target.querySelector('span.file-list__nodename')!.textContent;
-        console.log(`ダウンロード開始: ${fileName}`);
-        e.stopPropagation();
-      });
+      elm.addEventListener('click', (e: Event) => this.downloadFile(e));
     });
   }
 
+  /**
+   * ディレクトリ開閉
+   * @param e Event
+   */
   private toggleDir(e: Event) {
     const target = e.currentTarget as HTMLInputElement;
     const path = target.getAttribute('path');
@@ -86,6 +121,17 @@ export class FileTree {
     targetChildren.forEach((elm) => {
       elm.classList.toggle('file-list__node--closed');
     });
+    e.stopPropagation();
+  }
+
+  /**
+   * ファイルダウンロード
+   * @param e Event
+   */
+  private downloadFile(e: Event) {
+    const target = e.currentTarget as HTMLElement;
+    const fileName = target.querySelector('span.file-list__nodeline')!.textContent;
+    window.alert(`ダウンロード開始: ${fileName}`);
     e.stopPropagation();
   }
 }
