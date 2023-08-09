@@ -1,5 +1,5 @@
-import { UserRepository } from 'src/users/user-repostitory';
-import { BaseTable } from 'src/utils/table-base';
+import { UserRepository } from 'src/users/userRepostitory';
+import { BaseTable } from 'src/utils/tableBase';
 
 type User = {
   id: number;
@@ -23,6 +23,7 @@ type User = {
     catchPhrase: string;
     bs: string;
   };
+  bloodType: string;
 };
 
 export class UserList {
@@ -68,9 +69,9 @@ export class UserList {
       id: user.id.toString().padStart(3, '0'),
       name: user.name,
       email: user.email,
-      phone: user.phone,
       website: user.website,
       city: user.address.city,
+      bloodType: user.bloodType,
     };
   }
 }

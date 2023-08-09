@@ -1,8 +1,8 @@
-import { TabList } from 'src/utils/tab-base';
-import { UserRepository } from 'src/users/user-repostitory';
-import { UserList } from 'src/users/user-list';
-import { FileRepository } from 'src/files/file-repostitory';
-import { FileTree } from 'src/files/file-tree';
+import { TabList } from 'src/utils/tabBase';
+import { UserRepository } from 'src/users/userRepostitory';
+import { UserList } from 'src/users/userList';
+import { FileRepository } from 'src/files/fileRepostitory';
+import { FileTree } from 'src/files/fileTree';
 
 window.addEventListener('load', () => {
   // ユーザー一覧

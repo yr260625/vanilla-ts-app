@@ -1,4 +1,4 @@
-import { FileRepository } from 'src/files/file-repostitory';
+import { FileRepository } from 'src/files/fileRepostitory';
 
 type File = {
   index: number;

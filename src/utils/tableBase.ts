@@ -54,10 +54,21 @@ export class BaseTable {
   private createConcreteRow(templateRow: Node, valueObject: { [key: string]: string }) {
     const clonedRow = templateRow.cloneNode(true) as HTMLElement;
     for (const [key, value] of Object.entries(valueObject)) {
+      const inputCol = clonedRow.querySelector<HTMLInputElement>(`input[name=${key}]`);
+      if (inputCol) {
+        inputCol.value = String(value);
+        continue;
+      }
+      const selectCol = clonedRow.querySelector<HTMLInputElement>(`select[name=${key}]`);
+      if (selectCol) {
+        selectCol.value = String(value);
+        continue;
+      }
       const tdCol = clonedRow.querySelector<HTMLElement>(`[name=${key}]`);
-      const inputCol = clonedRow.querySelector<HTMLInputElement>(`[name=${key}]`);
-      if (tdCol) tdCol.textContent = String(value);
-      if (inputCol) inputCol.value = String(value);
+      if (tdCol) {
+        tdCol.textContent = String(value);
+        continue;
+      }
     }
     return clonedRow;
   }
