@@ -114,6 +114,51 @@ body {
 }
 
 /*********************************************************************
+* 買い物かご
+*********************************************************************/
+.cart__title {
+  padding: 15px 0;
+}
+
+/* ユーザー一覧テーブル */
+.product-list__table {
+  padding: 10px;
+  border-collapse: collapse;
+}
+/* ユーザー一覧テーブル ヘッダー */
+.product-list__thead {
+  background-color: #a3ddfc;
+}
+.product-list__th {
+  padding: 0.5rem;
+  text-align: left;
+}
+.product-list__td {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* ユーザー一覧テーブル リンク */
+.product-list__link {
+  color: #0074de;
+  cursor: pointer;
+}
+.product-list__link:hover {
+  opacity: 0.8;
+}
+
+/* ユーザー一覧テーブル 行 */
+.product-list__tr {
+  border-bottom: 1px solid #616161;
+}
+.product-list__tr:hover {
+  background-color: #c7e7f8;
+}
+.product-list__tr:last-child {
+  border-bottom: none;
+}
+
+/*********************************************************************
 * ファイル一覧
 *********************************************************************/
 

@@ -16,11 +16,12 @@ export class BaseTable {
    * テーブル生成
    */
   public create(list: Array<{ [key: string]: string }>) {
-    list.forEach((row: { [key: string]: string }) => {
+    list.forEach((row: { [key: string]: string }, index) => {
       const templateRow = this.createTemplateRow();
       const concreteRow = this.createConcreteRow(templateRow, row);
       const appendTargetDom = document.querySelector<HTMLElement>(`.${this.tableBodyName}`);
       concreteRow!.classList.remove('hidden');
+      concreteRow.setAttribute('rowId', index.toString());
       appendTargetDom!.appendChild(concreteRow!);
     });
   }

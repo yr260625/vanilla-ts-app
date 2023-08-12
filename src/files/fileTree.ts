@@ -1,16 +1,9 @@
-import { FileRepository } from 'src/files/fileRepostitory';
-
-type File = {
-  index: number;
-  type: number;
-  path: string;
-  name: string;
-};
+import { IFileRepository, File } from 'src/files/interfaces/fileRepostitory';
 
 export class FileTree {
   // ユーザー一覧
-  private files: File[] = [];
-  constructor(private fileRepository: FileRepository) {}
+  private files: Array<File> = [];
+  constructor(private fileRepository: IFileRepository) {}
 
   /**
    * ファイル一覧初期化

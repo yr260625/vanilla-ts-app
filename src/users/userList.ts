@@ -1,36 +1,11 @@
-import { UserRepository } from 'src/users/userRepostitory';
+import { IUserRepository, User } from 'src/users/interfaces/userRepostitory';
 import { BaseTable } from 'src/utils/tableBase';
-
-type User = {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
-  bloodType: string;
-};
 
 export class UserList {
   // ユーザー一覧
-  private users: User[] = [];
+  private users: Array<User> = [];
   private userTable = new BaseTable('user-list__table', 'user-list__tbody', 'user-list__tr');
-  constructor(private userRepository: UserRepository) {}
+  constructor(private userRepository: IUserRepository) {}
 
   /**
    * ユーザー一覧初期化
@@ -44,13 +19,13 @@ export class UserList {
       }),
     );
     this.userTable.show();
-    this.setUpEvent();
+    this.setupEvent();
   }
 
   /**
    * ページ内イベント設定
    */
-  private setUpEvent() {
+  private setupEvent() {
     document.querySelectorAll<HTMLElement>('.user-list__link').forEach((elm) => {
       elm.addEventListener('click', (e: Event) => {
         // 何某かのイベント
