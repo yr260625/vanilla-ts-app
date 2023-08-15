@@ -1,4 +1,4 @@
-export class BaseTable {
+export class TableDom {
   constructor(
     readonly tableClassName: string,
     readonly tableBodyName: string,

@@ -1,10 +1,10 @@
 import { IProductRepository, ProductInCart } from 'src/products/interfaces/productRepostitory';
-import { BaseTable } from 'src/utils/tableBase';
+import { TableDom } from 'src/utils/TableDom';
 
 export class Cart {
   // ユーザー一覧
   private products: Array<ProductInCart> = [];
-  private productsTable = new BaseTable(
+  private productsTable = new TableDom(
     'product-list__table',
     'product-list__tbody',
     'product-list__tr',

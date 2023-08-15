@@ -12,14 +12,14 @@
         <!--タブ切り替えスイッチ -->
         <nav class="menu">
           <ul class="menu__list">
-            <li class="menu__item" name="user-list">Users</li>
-            <li class="menu__item menu__item--active" name="cart">Cart</li>
+            <li class="menu__item menu__item--active" name="user-list">Users</li>
+            <li class="menu__item" name="cart">Cart</li>
             <li class="menu__item" name="file-list">Files</li>
           </ul>
         </nav>
         <!--タブ -->
         <div class="contents">
-          <div class="contents__item" name="user-list">
+          <div class="contents__item contents__item--active" name="user-list">
             <div class="user-list">
               <h2 class="user-list__title">Users</h2>
               <table class="user-list__table hidden">
@@ -36,7 +36,7 @@
               </table>
               <div>
                 <table>
-                  <tr class="user-list__tr hidden">
+                  <tr id="user-list-template" class="user-list__tr hidden">
                     <td class="user-list__td" name="id"></td>
                     <td class="user-list__td" name="name"></td>
                     <td class="user-list__td" name="email"></td>
@@ -60,7 +60,7 @@
               </div>
             </div>
           </div>
-          <div class="contents__item contents__item--active" name="cart">
+          <div class="contents__item" name="cart">
             <div class="cart">
               <h2 class="cart__title">Cart</h2>
               <table class="product-list__table hidden">
@@ -79,7 +79,7 @@
               </table>
               <div>
                 <table>
-                  <tr class="product-list__tr hidden">
+                  <tr id="product-list-template" class="product-list__tr hidden">
                     <td class="product-list__td" name="id"></td>
                     <td class="product-list__td" name="productName"></td>
                     <td class="product-list__td">
@@ -123,12 +123,8 @@
               <h2 class="file-list__title">Files</h2>
               <div class="file-list__root"></div>
             </div>
-            <div class="file-list__node hidden">
-              <span class="file-nodeline">
-                <img src="public/folder.svg" class="file-list__nodeicon hidden" />
-                <img src="public/file.svg" class="file-list__nodeicon hidden" />
-                <span name="name"></span>
-              </span>
+            <div id="file-node-template">
+              <span class="file-list__nodeline" name="name"></span>
             </div>
           </div>
         </div>

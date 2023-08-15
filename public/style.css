@@ -29,6 +29,7 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+/* 非表示 */
 .hidden {
   display: none;
 }
@@ -167,10 +168,16 @@ body {
   padding: 15px 0;
 }
 
-/* ファイル一覧 ノード */
-.file-list__node {
-  cursor: pointer;
+/* ファイル一覧 テンプレート */
+#file-node-template {
+  display: none;
 }
+
+/* ファイル一覧 ノード 閉ディレクトリ */
+.file-list__node--closed {
+  display: none;
+}
+
 /* ファイル一覧 ノード行 */
 .file-list__nodeline {
   display: flex;
@@ -180,16 +187,18 @@ body {
   border-bottom: 1px solid #616161;
   cursor: pointer;
 }
+/* ファイル一覧 ノードアイコン */
+.file-list__nodeline::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+}
+.file-list__nodeline[type='0']::before {
+  background: url('../public/folder.svg') no-repeat;
+}
+.file-list__nodeline[type='1']::before {
+  background: url('../public/file.svg') no-repeat;
+}
 .file-list__nodeline:hover {
   background-color: #c7e7f8;
-}
-
-/* ファイル一覧 ノードアイコン */
-.file-list__nodeicon {
-  width: 20px;
-}
-
-/* ファイル一覧 ディレクトリ */
-.file-list__node--closed {
-  display: none;
 }

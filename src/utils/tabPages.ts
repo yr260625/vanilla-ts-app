@@ -1,4 +1,4 @@
-export class TabList {
+export class TabPages {
   // タブ切り替え
   private menus: NodeListOf<HTMLDivElement>;
   // タブ内コンテンツ

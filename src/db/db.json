@@ -319,6 +319,12 @@
       "type": 0,
       "path": "/root/dir5",
       "name": "dir5"
+    },
+    {
+      "index": 16,
+      "type": 1,
+      "path": "/root/dir3/test33",
+      "name": "test33"
     }
   ]
 }

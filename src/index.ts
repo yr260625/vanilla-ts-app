@@ -1,4 +1,4 @@
-import { TabList } from 'src/utils/tabBase';
+import { TabPages } from 'src/utils/tabPages';
 import { UserRepository } from 'src/users/userRepostitory';
 import { UserList } from 'src/users/userList';
 import { FileRepository } from 'src/files/fileRepostitory';
@@ -20,6 +20,6 @@ window.addEventListener('load', () => {
   cart.setupPage();
 
   //　タブ切り替えイベント設定
-  const tabList = new TabList();
-  tabList.setupPage();
+  const tabPages = new TabPages();
+  tabPages.setupPage();
 });

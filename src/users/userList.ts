@@ -1,10 +1,10 @@
 import { IUserRepository, User } from 'src/users/interfaces/userRepostitory';
-import { BaseTable } from 'src/utils/tableBase';
+import { TableDom } from 'src/utils/tableDom';
 
 export class UserList {
   // ユーザー一覧
   private users: Array<User> = [];
-  private userTable = new BaseTable('user-list__table', 'user-list__tbody', 'user-list__tr');
+  private userTable = new TableDom('user-list__table', 'user-list__tbody', 'user-list__tr');
   constructor(private userRepository: IUserRepository) {}
 
   /**
