@@ -1,7 +1,5 @@
-export class TableDom {
-  public readonly table: HTMLElement;
-  public readonly tBody: HTMLElement;
-  public readonly tRow: HTMLElement;
+export class TableBuilder {
+  private readonly tbody: HTMLElement;
 
   /**
    * コンストラクタ
@@ -9,32 +7,22 @@ export class TableDom {
    * @param tbodyClass tbodyタグクラス名
    * @param trClass 　 trテンプレートクラス名
    */
-  constructor(tableClass: string, tbodyClass: string, trClass: string) {
-    const table = document.querySelector<HTMLElement>(`.${tableClass}`);
-    const tBody = document.querySelector<HTMLElement>(`.${tbodyClass}`);
-    const tRow = document.querySelector<HTMLElement>(`.${trClass}`);
-
-    /* 指定されたDOMが存在しない場合はエラー */
-    if (!table) {
-      throw Error(`.${tableClass} doesn't exists in page.`);
+  constructor(
+    private readonly table: HTMLElement,
+    private readonly tr: HTMLElement,
+  ) {
+    const tbody = table.querySelector<HTMLElement>(`tbody`);
+    if (!tbody) {
+      throw Error("tbody doesn't exists in page.");
     }
-    if (!tBody) {
-      throw Error(`.${tbodyClass} doesn't exists in page.`);
-    }
-    if (!tRow) {
-      throw Error(`.${trClass} doesn't exists in page.`);
-    }
-
-    this.table = table;
-    this.tBody = tBody;
-    this.tRow = tRow;
+    this.tbody = tbody;
   }
 
   /**
    * テーブル初期化
    */
   public init() {
-    this.tBody.innerHTML = '';
+    this.tbody.innerHTML = '';
   }
 
   /**
@@ -45,8 +33,10 @@ export class TableDom {
       const concreteRow = this.createConcreteRow(row);
       concreteRow.classList.remove('hidden');
       concreteRow.setAttribute('rowId', index.toString());
-      this.tBody.appendChild(concreteRow);
+      this.tbody.appendChild(concreteRow);
     });
+
+    return this.table;
   }
 
   /**
@@ -62,7 +52,7 @@ export class TableDom {
    * @param valueObject 列名と値の辞書オブジェクト
    */
   private createConcreteRow(valueObject: { [key: string]: string }) {
-    const clonedRow = this.tRow.cloneNode(true) as HTMLElement;
+    const clonedRow = this.tr.cloneNode(true) as HTMLElement;
     for (const [key, value] of Object.entries(valueObject)) {
       const inputCol = clonedRow.querySelector<HTMLInputElement>(`input[name=${key}]`);
       if (inputCol) {

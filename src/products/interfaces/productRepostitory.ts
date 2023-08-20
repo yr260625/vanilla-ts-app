@@ -5,7 +5,7 @@ export type Product = {
   taxedPrice: string;
 };
 
-export type ProductInCart = {
+export type ProductInProduct = {
   cartId: number;
   productId: number;
   productName: string;
@@ -17,5 +17,5 @@ export type ProductInCart = {
 
 export interface IProductRepository {
   fetchById(productId: number): Promise<Product>;
-  fetchByCartId(cartId: number): Promise<Array<ProductInCart>>;
+  fetchByCartId(cartId: number): Promise<Array<ProductInProduct>>;
 }
