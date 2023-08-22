@@ -40,9 +40,9 @@ export class Products {
    * @param productsTable 商品一覧テーブル
    */
   private appendProductsTable(productsTable: HTMLElement) {
-    const tableContainer = document.querySelector('#product-list__table-container')!;
+    const tableContainer = document.querySelector('#product-list__table-container');
     if (!tableContainer) {
-      throw Error(`.user-list__table-container doesn't exists in page.`);
+      throw Error(`product-list__table-container doesn't exists in page.`);
     }
     tableContainer.appendChild(productsTable);
   }
