@@ -2,11 +2,10 @@ import { IUserRepository, User } from 'src/users/interfaces/userRepostitory';
 import { TableBuilder } from 'src/utils/tableBuilder';
 
 export class UserList {
-  // ユーザー一覧
   constructor(private userRepository: IUserRepository) {}
 
   /**
-   * ユーザー一覧初期化
+   * ユーザー一覧ページ初期化
    */
   public async setupPage() {
     const users = await this.userRepository.fetchAll();
@@ -16,14 +15,14 @@ export class UserList {
         return this.getUserForDisplay(user);
       }),
     );
-    this.showUserTable(usersTable);
+    this.appendUserTable(usersTable);
     this.setupEvent();
   }
 
   /**
    * ユーザー一覧テーブル 表示値生成
-   * @param user
-   * @returns
+   * @param user ユーザーオブジェクト
+   * @returns ユーザー表示値
    */
   private getUserForDisplay(user: User) {
     return {
@@ -36,7 +35,11 @@ export class UserList {
     };
   }
 
-  private showUserTable(usersTable: HTMLElement) {
+  /**
+   * 生成したユーザー一覧テーブルを画面に追加
+   * @param usersTable ユーザー一覧テーブル
+   */
+  private appendUserTable(usersTable: HTMLElement) {
     const tableContainer = document.querySelector('#user-list__table-container')!;
     if (!tableContainer) {
       throw Error(`.user-list__table-container doesn't exists in page.`);
@@ -56,6 +59,10 @@ export class UserList {
     });
   }
 
+  /**
+   * ユーザー一覧テーブル table定義
+   * @returns ユーザー一覧テーブル(テンプレート)
+   */
   private getTableDom() {
     const domString = `
     <table class="user-list__table">
@@ -77,6 +84,10 @@ export class UserList {
     return wrpperDom.querySelector('table')!;
   }
 
+  /**
+   * ユーザー一覧テーブル tr定義
+   * @returns ユーザー一覧テーブル行(テンプレート)
+   */
   private getTableRowDom() {
     const domString = `
     <tr id="user-list-template" class="user-list__tr hidden">

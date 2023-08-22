@@ -1,11 +1,11 @@
-import { IProductRepository, ProductInProduct } from 'src/products/interfaces/productRepostitory';
+import { IProductRepository, ProductInCart } from 'src/products/interfaces/productRepostitory';
 import { TableBuilder } from 'src/utils/tableBuilder';
 
 export class Products {
   constructor(private productRepository: IProductRepository) {}
 
   /**
-   * 商品一覧初期化
+   * 商品一覧ページ初期化
    */
   public async setupPage() {
     const products = await this.productRepository.fetchByCartId(1);
@@ -15,20 +15,31 @@ export class Products {
         return this.getProductForDisplay(product);
       }),
     );
-    this.showProductsTable(productsTable);
+    this.appendProductsTable(productsTable);
     this.setupEvent();
   }
 
-  // private setupProductTable() {
-  //   this.products.forEach((product, index) => {
-  //     const targetRow = document.querySelector<HTMLElement>(`.product-list__tr[rowId="${index}"]`);
-  //     targetRow!
-  //       .querySelector<HTMLElement>('[name=product-detail')
-  //       ?.setAttribute('productId', product.productId.toString());
-  //   });
-  // }
+  /**
+   * 商品一覧テーブル 表示値生成
+   * @param elm 商品オブジェクト
+   * @returns 商品表示値
+   */
+  private getProductForDisplay(elm: ProductInCart) {
+    return {
+      id: elm.productId.toString().padStart(3, '0'),
+      productName: elm.productName,
+      quantity: elm.quantity.toString(),
+      price: elm.price,
+      taxedPrice: elm.taxedPrice,
+      coupon: elm.coupon,
+    };
+  }
 
-  private showProductsTable(productsTable: HTMLElement) {
+  /**
+   * 生成した商品一覧テーブルを画面に追加
+   * @param productsTable 商品一覧テーブル
+   */
+  private appendProductsTable(productsTable: HTMLElement) {
     const tableContainer = document.querySelector('#product-list__table-container')!;
     if (!tableContainer) {
       throw Error(`.user-list__table-container doesn't exists in page.`);
@@ -59,21 +70,9 @@ export class Products {
   }
 
   /**
-   * ユーザー一覧テーブル 表示値生成
-   * @param user
-   * @returns
+   * 商品一覧テーブル table定義
+   * @returns 商品一覧テーブル(テンプレート)
    */
-  private getProductForDisplay(elm: ProductInProduct) {
-    return {
-      id: elm.productId.toString().padStart(3, '0'),
-      productName: elm.productName,
-      quantity: elm.quantity.toString(),
-      price: elm.price,
-      taxedPrice: elm.taxedPrice,
-      coupon: elm.coupon,
-    };
-  }
-
   private getTableDom() {
     const domString = `
     <table class="product-list__table">
@@ -96,6 +95,10 @@ export class Products {
     return wrpperDom.querySelector('table')!;
   }
 
+  /**
+   * 商品一覧テーブル tr定義
+   * @returns 商品一覧テーブル行(テンプレート)
+   */
   private getTableRowDom() {
     const domString = `
     <tr id="product-list-template" class="product-list__tr hidden">

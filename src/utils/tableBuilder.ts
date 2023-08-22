@@ -3,9 +3,8 @@ export class TableBuilder {
 
   /**
    * コンストラクタ
-   * @param tableClass tableタグクラス名
-   * @param tbodyClass tbodyタグクラス名
-   * @param trClass 　 trテンプレートクラス名
+   * @param table tableテンプレートDOM
+   * @param tr 　 trテンプレートDOM
    */
   constructor(
     private readonly table: HTMLElement,
@@ -27,6 +26,8 @@ export class TableBuilder {
 
   /**
    * テーブル生成
+   * @param list 列名と値の辞書
+   * @returns テーブルDOM
    */
   public create(list: Array<{ [key: string]: string }>) {
     list.forEach((row: { [key: string]: string }, index) => {
@@ -40,16 +41,9 @@ export class TableBuilder {
   }
 
   /**
-   * テーブル表示
-   */
-  public show() {
-    this.table.classList.remove('hidden');
-  }
-
-  /**
    *  テーブル行生成
-   * @param templateRow テーブルテンプレート行(DOM)
-   * @param valueObject 列名と値の辞書オブジェクト
+   * @param valueObject 列名と値の辞書
+   * @returns テーブル行DOM
    */
   private createConcreteRow(valueObject: { [key: string]: string }) {
     const clonedRow = this.tr.cloneNode(true) as HTMLElement;

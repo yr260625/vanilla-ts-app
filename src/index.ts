@@ -1,4 +1,4 @@
-import { TabPages } from 'src/utils/tabPages';
+import { TabBuilder } from 'src/utils/tabBuilder';
 import { UserRepository } from 'src/users/userRepostitory';
 import { UserList } from 'src/users/userList';
 import { FileRepository } from 'src/files/fileRepostitory';
@@ -20,6 +20,6 @@ window.addEventListener('load', () => {
   products.setupPage();
 
   //　タブ切り替えイベント設定
-  const tabPages = new TabPages();
-  tabPages.setupPage();
+  const tabBuilder = new TabBuilder();
+  tabBuilder.setupPage();
 });

@@ -8,37 +8,35 @@
   </head>
   <body>
     <main class="main">
-      <div class="main__container">
-        <!--タブ切り替えスイッチ -->
-        <nav class="menu">
-          <ul class="menu__list">
-            <li class="menu__item menu__item--active" name="user-list">Users</li>
-            <li class="menu__item" name="cart">Product</li>
-            <li class="menu__item" name="file-list">Files</li>
-          </ul>
-        </nav>
-        <!--タブ -->
-        <div class="contents">
-          <div class="contents__item contents__item--active" name="user-list">
-            <div class="user-list">
-              <h2 class="user-list__title">Users</h2>
-              <div id="user-list__table-container"></div>
-            </div>
+      <!--タブ切り替えスイッチ -->
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="menu__item menu__item--active" name="user-list">Users</li>
+          <li class="menu__item" name="cart">Product</li>
+          <li class="menu__item" name="file-list">Files</li>
+        </ul>
+      </nav>
+      <!--タブ -->
+      <div class="contents">
+        <div class="contents__item contents__item--active" name="user-list">
+          <div class="user-list">
+            <h2 class="user-list__title">Users</h2>
+            <div id="user-list__table-container"></div>
           </div>
-          <div class="contents__item" name="cart">
-            <div class="cart">
-              <h2 class="products__title">Products</h2>
-              <div id="product-list__table-container"></div>
-            </div>
+        </div>
+        <div class="contents__item" name="cart">
+          <div class="cart">
+            <h2 class="products__title">Products</h2>
+            <div id="product-list__table-container"></div>
           </div>
-          <div class="contents__item" name="file-list">
-            <div class="file-list">
-              <h2 class="file-list__title">Files</h2>
-              <div class="file-list__root"></div>
-            </div>
-            <div id="file-node-template">
-              <span class="file-list__nodeline" name="name"></span>
-            </div>
+        </div>
+        <div class="contents__item" name="file-list">
+          <div class="file-list">
+            <h2 class="file-list__title">Files</h2>
+            <div class="file-list__root"></div>
+          </div>
+          <div id="file-node-template">
+            <span class="file-list__nodeline" name="name"></span>
           </div>
         </div>
       </div>
