@@ -1,0 +1,330 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "address": {
+        "street": "Kulas Light",
+        "suite": "Apt. 556",
+        "city": "Gwenborough",
+        "zipcode": "92998-3874"
+      },
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org",
+      "bloodType": "A"
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv",
+      "address": {
+        "street": "Victor Plains",
+        "suite": "Suite 879",
+        "city": "Wisokyburgh",
+        "zipcode": "90566-7771"
+      },
+      "phone": "010-692-6593 x09125",
+      "website": "anastasia.net",
+      "bloodType": "B"
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "email": "Nathan@yesenia.net",
+      "address": {
+        "street": "Douglas Extension",
+        "suite": "Suite 847",
+        "city": "McKenziehaven",
+        "zipcode": "59590-4157"
+      },
+      "phone": "1-463-123-4447",
+      "website": "ramiro.info",
+      "bloodType": "B"
+    },
+    {
+      "id": 4,
+      "name": "Patricia Lebsack",
+      "username": "Karianne",
+      "email": "Julianne.OConner@kory.org",
+      "address": {
+        "street": "Hoeger Mall",
+        "suite": "Apt. 692",
+        "city": "South Elvis",
+        "zipcode": "53919-4257"
+      },
+      "phone": "493-170-9623 x156",
+      "website": "kale.biz",
+      "bloodType": "O"
+    },
+    {
+      "id": 5,
+      "name": "Chelsey Dietrich",
+      "username": "Kamren",
+      "email": "Lucio_Hettinger@annie.ca",
+      "address": {
+        "street": "Skiles Walks",
+        "suite": "Suite 351",
+        "city": "Roscoeview",
+        "zipcode": "33263"
+      },
+      "phone": "(254)954-1289",
+      "website": "demarco.info",
+      "bloodType": "AB"
+    },
+    {
+      "id": 6,
+      "name": "Mrs. Dennis Schulist",
+      "username": "Leopoldo_Corkery",
+      "email": "Karley_Dach@jasper.info",
+      "address": {
+        "street": "Norberto Crossing",
+        "suite": "Apt. 950",
+        "city": "South Christy",
+        "zipcode": "23505-1337"
+      },
+      "phone": "1-477-935-8478 x6430",
+      "website": "ola.org",
+      "bloodType": "AB"
+    },
+    {
+      "id": 7,
+      "name": "Kurtis Weissnat",
+      "username": "Elwyn.Skiles",
+      "email": "Telly.Hoeger@billy.biz",
+      "address": {
+        "street": "Rex Trail",
+        "suite": "Suite 280",
+        "city": "Howemouth",
+        "zipcode": "58804-1099"
+      },
+      "phone": "210.067.6132",
+      "website": "elvis.io",
+      "bloodType": "A"
+    },
+    {
+      "id": 8,
+      "name": "Nicholas Runolfsdottir V",
+      "username": "Maxime_Nienow",
+      "email": "Sherwood@rosamond.me",
+      "address": {
+        "street": "Ellsworth Summit",
+        "suite": "Suite 729",
+        "city": "Aliyaview",
+        "zipcode": "45169"
+      },
+      "phone": "586.493.6943 x140",
+      "website": "jacynthe.com",
+      "bloodType": "A"
+    },
+    {
+      "id": 9,
+      "name": "Glenna Reichert",
+      "username": "Delphine",
+      "email": "Chaim_McDermott@dana.io",
+      "address": {
+        "street": "Dayna Park",
+        "suite": "Suite 449",
+        "city": "Bartholomebury",
+        "zipcode": "76495-3109"
+      },
+      "phone": "(775)976-6794 x41206",
+      "website": "conrad.com",
+      "bloodType": "O"
+    },
+    {
+      "id": 10,
+      "name": "Clementina DuBuque",
+      "username": "Moriah.Stanton",
+      "email": "Rey.Padberg@karina.biz",
+      "address": {
+        "street": "Kattie Turnpike",
+        "suite": "Suite 198",
+        "city": "Lebsackbury",
+        "zipcode": "31428-2261"
+      },
+      "phone": "024-648-3804",
+      "website": "ambrose.net",
+      "bloodType": "AB"
+    }
+  ],
+  "products": [
+    {
+      "cartId": 1,
+      "productId": 0,
+      "productName": "product_0",
+      "quantity": 5,
+      "price": 1000,
+      "taxedPrice": 1100,
+      "coupon": "B",
+      "setId": null
+    },
+    {
+      "cartId": 1,
+      "productId": 1,
+      "productName": "product_1",
+      "quantity": 9,
+      "price": 2000,
+      "taxedPrice": 2200,
+      "coupon": "",
+      "setId": null
+    },
+    {
+      "cartId": 1,
+      "productId": 2,
+      "productName": "product_2",
+      "quantity": 10,
+      "price": 100,
+      "taxedPrice": 110,
+      "coupon": "B",
+      "setId": null
+    },
+    {
+      "cartId": 1,
+      "productId": 3,
+      "productName": "product_3",
+      "quantity": 10,
+      "price": 600,
+      "taxedPrice": 660,
+      "coupon": "B",
+      "setId": 90
+    },
+    {
+      "cartId": 1,
+      "productId": 4,
+      "productName": "product_3-1",
+      "quantity": 10,
+      "price": 400,
+      "taxedPrice": 440,
+      "coupon": "B",
+      "setId": 90
+    },
+    {
+      "cartId": 1,
+      "productId": 5,
+      "productName": "product_3-2",
+      "quantity": 10,
+      "price": 200,
+      "taxedPrice": 220,
+      "coupon": "A",
+      "setId": 90
+    },
+    {
+      "cartId": 1,
+      "productId": 6,
+      "productName": "product_4",
+      "quantity": 3,
+      "price": 800,
+      "taxedPrice": 880,
+      "coupon": "A",
+      "setId": null
+    }
+  ],
+  "files": [
+    {
+      "index": 0,
+      "type": 0,
+      "path": "/root",
+      "name": "root"
+    },
+    {
+      "index": 1,
+      "type": 0,
+      "path": "/root/dir1",
+      "name": "dir1"
+    },
+    {
+      "index": 2,
+      "type": 1,
+      "path": "/root/dir1/file11",
+      "name": "file11"
+    },
+    {
+      "index": 3,
+      "type": 1,
+      "path": "/root/dir1/file12",
+      "name": "file12"
+    },
+    {
+      "index": 4,
+      "type": 0,
+      "path": "/root/dir1/dir11",
+      "name": "dir11"
+    },
+    {
+      "index": 5,
+      "type": 1,
+      "path": "/root/dir1/dir11/file111",
+      "name": "file111"
+    },
+    {
+      "index": 6,
+      "type": 1,
+      "path": "/root/dir1/dir11/file112",
+      "name": "file112"
+    },
+    {
+      "index": 7,
+      "type": 1,
+      "path": "/root/dir1/dir11/file113",
+      "name": "file113"
+    },
+    {
+      "index": 8,
+      "type": 0,
+      "path": "/root/dir1/dir12",
+      "name": "dir12"
+    },
+    {
+      "index": 9,
+      "type": 0,
+      "path": "/root/dir2",
+      "name": "dir2"
+    },
+    {
+      "index": 10,
+      "type": 1,
+      "path": "/root/dir2/file21",
+      "name": "file21"
+    },
+    {
+      "index": 11,
+      "type": 1,
+      "path": "/root/dir2/file22",
+      "name": "file22"
+    },
+    {
+      "index": 12,
+      "type": 1,
+      "path": "/root/dir2/file23",
+      "name": "file23"
+    },
+    {
+      "index": 13,
+      "type": 0,
+      "path": "/root/dir3",
+      "name": "dir3"
+    },
+    {
+      "index": 14,
+      "type": 0,
+      "path": "/root/dir4",
+      "name": "dir4"
+    },
+    {
+      "index": 15,
+      "type": 0,
+      "path": "/root/dir5",
+      "name": "dir5"
+    },
+    {
+      "index": 16,
+      "type": 1,
+      "path": "/root/dir3/test33",
+      "name": "test33"
+    }
+  ]
+}

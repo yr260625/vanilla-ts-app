@@ -1,0 +1,204 @@
+/*********************************************************************
+* リセットスタイル
+*********************************************************************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+
+/*********************************************************************
+* 全体スタイルスタイル
+*********************************************************************/
+/* ボディ */
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
+    'BIZ UDPGothic', Meiryo, sans-serif;
+  color: #2d3748;
+}
+
+/* メイン */
+.main {
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+}
+
+/* 非表示 */
+.hidden {
+  display: none;
+}
+
+/*********************************************************************
+* タブ
+*********************************************************************/
+/* タブ切り替えボタン */
+.menu__list {
+  display: flex;
+}
+.menu__item {
+  text-align: center;
+  width: 100px;
+  padding: 4px;
+  cursor: pointer;
+  color: rgb(183, 183, 183);
+  font-weight: lighter;
+}
+.menu__item--active {
+  background-color: rgb(255, 255, 255);
+  color: #5e83e8;
+  font-weight: bold;
+  border-bottom: solid 0.1rem #5e83e8;
+}
+
+/* タブコンテンツ */
+.contents {
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 1024px;
+}
+.contents__item {
+  display: none;
+}
+.contents__item--active {
+  display: block;
+}
+
+/*********************************************************************
+* ユーザー一覧
+*********************************************************************/
+.user-list__title {
+  padding: 15px 0;
+}
+
+/* ユーザー一覧テーブル */
+.user-list__table {
+  padding: 10px;
+  border-collapse: collapse;
+}
+/* ユーザー一覧テーブル ヘッダー */
+.user-list__thead {
+  background-color: #a3ddfc;
+}
+.user-list__th {
+  padding: 0.5rem;
+  text-align: left;
+}
+.user-list__td {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* ユーザー一覧テーブル リンク */
+.user-list__link {
+  color: #0074de;
+  cursor: pointer;
+}
+.user-list__link:hover {
+  opacity: 0.8;
+}
+
+/* ユーザー一覧テーブル 行 */
+.user-list__tr {
+  border-bottom: 1px solid #616161;
+}
+.user-list__tr:hover {
+  background-color: #c7e7f8;
+}
+.user-list__tr:last-child {
+  border-bottom: none;
+}
+
+/*********************************************************************
+* 買い物かご
+*********************************************************************/
+.products__title {
+  padding: 15px 0;
+}
+
+/* ユーザー一覧テーブル */
+.product-list__table {
+  padding: 10px;
+  border-collapse: collapse;
+}
+/* ユーザー一覧テーブル ヘッダー */
+.product-list__thead {
+  background-color: #a3ddfc;
+}
+.product-list__th {
+  padding: 0.5rem;
+  text-align: left;
+}
+.product-list__td {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* ユーザー一覧テーブル リンク */
+.product-list__link {
+  color: #0074de;
+  cursor: pointer;
+}
+.product-list__link:hover {
+  opacity: 0.8;
+}
+
+/* ユーザー一覧テーブル 行 */
+.product-list__tr {
+  border-bottom: 1px solid #616161;
+}
+.product-list__tr:hover {
+  background-color: #c7e7f8;
+}
+.product-list__tr:last-child {
+  border-bottom: none;
+}
+
+/*********************************************************************
+* ファイル一覧
+*********************************************************************/
+
+/* ファイル一覧 タイトル */
+.file-list__title {
+  padding: 15px 0;
+}
+
+/* ファイル一覧 テンプレート */
+#file-node-template {
+  display: none;
+}
+
+/* ファイル一覧 ノード 閉ディレクトリ */
+.file-list__node--closed {
+  display: none;
+}
+
+/* ファイル一覧 ノード行 */
+.file-list__nodeline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px;
+  border-bottom: 1px solid #616161;
+  cursor: pointer;
+}
+/* ファイル一覧 ノードアイコン */
+.file-list__nodeline::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+}
+.file-list__nodeline[type='0']::before {
+  background: url('../public/folder.svg') no-repeat;
+}
+.file-list__nodeline[type='1']::before {
+  background: url('../public/file.svg') no-repeat;
+}
+.file-list__nodeline:hover {
+  background-color: #c7e7f8;
+}
