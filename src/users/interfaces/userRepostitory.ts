@@ -16,5 +16,4 @@ export type User = {
 
 export interface IUserRepository {
   fetchAll(): Promise<Array<User>>;
-  fetchById(id: number): Promise<User>;
 }

@@ -16,6 +16,5 @@ export type ProductInCart = {
 };
 
 export interface IProductRepository {
-  fetchById(productId: number): Promise<Product>;
   fetchByCartId(cartId: number): Promise<Array<ProductInCart>>;
 }

@@ -4,7 +4,7 @@ import { UserList } from 'src/users/userList';
 import { FileRepository } from 'src/files/fileRepostitory';
 import { FileTree } from 'src/files/fileTree';
 import { ProductRepository } from 'src/products/productRepostitory';
-import { Products } from 'src/products/products';
+import { ProductList } from 'src/products/productList';
 
 window.addEventListener('load', () => {
   // ユーザー一覧
@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
   files.setupPage();
 
   // 商品一覧
-  const products = new Products(new ProductRepository());
+  const products = new ProductList(new ProductRepository());
   products.setupPage();
 
   //　タブ切り替えイベント設定

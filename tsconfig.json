@@ -23,7 +23,10 @@
     "baseUrl": ".",
     "paths": {
       "src/*": ["src/*"]
-    }
+    },
+
+    /* Vitest */
+    "types": ["vitest/globals"]
   },
   "include": ["src"]
 }

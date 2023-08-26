@@ -1,7 +1,7 @@
 import { IProductRepository, ProductInCart } from 'src/products/interfaces/productRepostitory';
 import { TableBuilder } from 'src/utils/tableBuilder';
 
-export class Products {
+export class ProductList {
   constructor(private productRepository: IProductRepository) {}
 
   /**
@@ -59,7 +59,7 @@ export class Products {
       });
     });
 
-    document.querySelectorAll<HTMLElement>('[name=product-detail').forEach((elm) => {
+    document.querySelectorAll<HTMLElement>('[name=product-detail]').forEach((elm) => {
       elm.addEventListener('click', (e: Event) => {
         // 何某かのイベント
         console.log('商品詳細');
